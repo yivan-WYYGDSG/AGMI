@@ -1,0 +1,30 @@
+data = dict(
+    workers_per_gpu=4,
+    train_dataloader=dict(samples_per_gpu=32, drop_last=True, pin_memory=False),  
+    val_dataloader=dict(samples_per_gpu=32, drop_last=True, pin_memory=False),
+    test_dataloader=dict(samples_per_gpu=32, drop_last=True, pin_memory=False),
+    train=dict(
+        type='DrugsGenesDataset',
+        data_items='data/split/0_fold_tr_items.npy',
+        celllines_data='data/processed_raw_data/564_cellGraphs_exp_mu_cn.npy',
+        drug_graphs='data/processed_raw_data/drugId_drugGraph.npy',
+        metrics=['RMSE', 'MSE', 'R2', 'PEARSON', 'MAE', 'SPEARMAN'],
+        name='DrugsGenes_nogrpah_0_fold_tr',
+        include_omic=['mut']),
+    val=dict(
+        type='DrugsGenesDataset',
+        data_items='data/split/0_fold_tr_items.npy',
+        celllines_data='data/processed_raw_data/564_cellGraphs_exp_mu_cn.npy',
+        drug_graphs='data/processed_raw_data/drugId_drugGraph.npy',
+        metrics=['RMSE', 'MSE', 'R2', 'PEARSON', 'MAE', 'SPEARMAN'],
+        name='DrugsGenes_nogrpah_0_fold_val',
+        include_omic=['mut']),
+    test=dict(
+        type='DrugsGenesDataset',
+        data_items='data/split/test_items.npy',
+        celllines_data='data/processed_raw_data/564_cellGraphs_exp_mu_cn.npy',
+        drug_graphs='data/processed_raw_data/drugId_drugGraph.npy',
+        metrics=['RMSE', 'MSE', 'R2', 'PEARSON', 'MAE', 'SPEARMAN'],
+        name='DrugsGenes_nogrpah_test',
+        include_omic=['mut']),
+)
