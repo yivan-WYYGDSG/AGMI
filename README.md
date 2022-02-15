@@ -19,7 +19,7 @@ We train AGMI on our [benchmark dataset](https://drive.google.com/drive/folders/
 
 |     Method     |  RMSE  | MAE | MSE | R2 |  Download |
 |:--------------:|:-----:|:-----:|:-----:|:------:|:--------:|
-|    AGMI     | 0.7943  | 0.6048  | 0.6317  |  0.9184  | [model](https://drive.google.com/file/d/1RWP_5iUfc9xYtWX_ypwvZJR2kfd9uaGS/view?usp=sharing) |
+|    AGMI     | 0.7943  | 0.6048  | 0.6317  |  0.9184  | [model](https://drive.google.com/drive/folders/1q2Hdp9ntUZcooK8aM_R4XjDAIvnInMtJ?usp=sharing) |
 
 ## Disclaimer
 
@@ -45,8 +45,8 @@ python setup.py develop
 
 ### raw dataset
 
-We collect [the response scores of cell-drug pairs (IC50 values)](https://drive.google.com/drive/folders/1bFQvfxYoj_RNYrnYcfnFRtNTgul5DmTO?usp=sharing) from Genomics of Drug Sensitivity in Cancer (GDSC) (Iorioet al., 2016). Please put them in ``` data/processed_raw_data ``` before training or testing any models.  
-we conducted our Multi-omics data using Cancer Cell Line Encyclopedia (CCLE) (Barretinaet al., 2012) (for genomic profiles), the STRING database (Szklarczyk
+1. We collect [the response scores of cell-drug pairs (IC50 values)](https://drive.google.com/drive/folders/1bFQvfxYoj_RNYrnYcfnFRtNTgul5DmTO?usp=sharing) from Genomics of Drug Sensitivity in Cancer (GDSC) (Iorioet al., 2016). Please put them in ``` data/processed_raw_data ``` before training or testing any models.  
+2. we conducted our Multi-omics data using Cancer Cell Line Encyclopedia (CCLE) (Barretinaet al., 2012) (for genomic profiles), the STRING database (Szklarczyk
 et al., 2018) (for proteomic data), and the GSEA dataset (Subramanianet al., 2005) (for gene pathways). We preprocessed it into [edges](https://drive.google.com/drive/folders/1mTzl4Y_GoTprdpxqT_WwNzwVbpgtkRPm?usp=sharing) so that our framework can directly use it. Please put them in ``` data/edges/processed ``` before training or testing AGMI models.
 
 ### splited cell-drug pairs
