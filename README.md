@@ -1,5 +1,5 @@
 
-<!-- # Towards More Accurate Drug Response Predictionby Integrating Multi-omics Data of the Whole Genome -->
+<!-- # Towards More Accurate Drug Response Prediction by Integrating Multi-omics Data of the Whole Genome -->
 
 # PyTorch implementation for "Towards More Accurate Drug Response Predictionby Integrating Multi-omics Data of the Whole Genome" <br/>
 
