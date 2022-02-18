@@ -89,7 +89,7 @@ You can use our trained model for drug response prediction. Please make sure tha
 
 1. Each cell line contains gene expression, mutation state, CNV, DNA methylation(only for deepCDR) of the same 18498 genes we described in our supplementary.  
 2. Drug should be one of the 170 drugs we described in our supplementary, or you need to prepare your drug data as PyG's Data type.  
-3. Organizing all cell-drug pairs as a binary file which can be loaded by numpy with the same format of files in :  ``` data/split ```. 
+3. Organize all cell-drug pairs as a binary file which can be loaded by numpy with the same format of files in :  ``` data/split ```. 
 
 ## Testing
 Our trained models are available for download [here](https://drive.google.com/drive/folders/1q2Hdp9ntUZcooK8aM_R4XjDAIvnInMtJ?usp=sharing). Please put it in `saved_models` and modify data path in config file, and run the following commands to test AGMI on your own dataset or our test dataset.
