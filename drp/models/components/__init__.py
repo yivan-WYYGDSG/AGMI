@@ -5,5 +5,5 @@ from .init_weights import generation_init_weights
 
 __all__ = [
     'BaseFusionHead', 'Conv1dNeck', 'AGMIEncoder', 'EdgeGatedGraphEncoder',
-    'TcnnFusionHead', 'DrugGINEncoder', 'GatedAttention','MultiEdgeGatedGraphConv', 'DrugGATEncoder', 'generation_init_weights'
+    'TcnnFusionHead', 'DrugGINEncoder', 'GatedAttention','MultiEdgeGatedGraphConv', 'DrugGATEncoder', 'generation_init_weights',
     'CDRConvEncoder', 'DrugGCNncoder', 'NaiveGenesEncoder', 'TcnnConvEncoder','AGMIFusionHead', 'AGMICellNeck']

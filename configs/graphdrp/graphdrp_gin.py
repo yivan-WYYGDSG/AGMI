@@ -3,7 +3,8 @@ exp_name = 'grpahdrp_gin_0fold'
 _base_ = [
     '../_base_/models/GraphDRP/GraphDRP_GIN.py',
     '../_base_/dataset/drp_dataset/drugs_genes_dataset.py',
-    '../_base_/exp_setting/base_setting.py'
+    '../_base_/exp_setting/base_setting.py',
+    '../_base_/default_runtime.py'
 ]
 
 data = dict(

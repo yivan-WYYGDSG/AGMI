@@ -6,7 +6,7 @@ from mmcv.runner import load_checkpoint
 
 from drp.utils import get_root_logger
 
-from drp.models.common import generation_init_weights
+from drp.models.components import generation_init_weights
 
 
 @BACKBONES.register_module()

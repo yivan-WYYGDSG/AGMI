@@ -3,7 +3,8 @@ exp_name = 'tcnn_0fold_mut_expr'
 _base_ = [
     '../_base_/models/tcnn/tcnn_drper.py',
     '../_base_/dataset/drp_dataset/plain_drugs_genes_dataset.py',
-    '../_base_/exp_setting/base_setting.py'
+    '../_base_/exp_setting/base_setting.py',
+    '../_base_/default_runtime.py'
 ]
 data = dict(
     train=dict(

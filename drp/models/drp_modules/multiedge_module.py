@@ -1,6 +1,6 @@
 from collections import OrderedDict
 
-from ..base import BaseModel
+
 from ..registry import MODELS
 from drp.core import mse, rmse, r2, pearson, spearman, mae
 from ..builder import build_backbone, build_loss, build_component

@@ -14,7 +14,6 @@ class InMemoryMultiEdgeGraphGenesDataset(BaseInMemoryDataset):
                  data_items,
                  celllines_data,
                  num_genes_nodes,
-                 include_omic,
                  metrics,
                  drug_graphs=None,
                  root='./work_dir/genes_drug_data',
@@ -69,12 +68,11 @@ class InMemoryMultiEdgeGraphGenesDataset(BaseInMemoryDataset):
             self.diseases.append(disease)
             x1_data = torch.Tensor()
             if len(self.include_omic) == 3:
-                x1_data = self.celllines[c1].x
+                x1_data = self.celllines[c1]
             else:
                 for key in self.include_omic:
                     x1_data = torch.cat((x1_data, self.celllines[c1].x[:, self.omic_data[key]]), 0)
                 x1_data = x1_data.view(-1, len(self.include_omic))
-
             drug_cell_data = Data(x=torch.Tensor(features),
                                   edge_index=torch.LongTensor(edge_index).transpose(1, 0),
                                   y=torch.FloatTensor([target[0]]))

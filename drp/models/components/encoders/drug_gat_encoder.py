@@ -28,5 +28,10 @@ class DrugGATEncoder(torch.nn.Module):
         x = gmp(x, batch)
         x = self.fc_g1(x)
         x = self.relu(x)
-
         return x
+    
+
+    def init_weights(self):
+        for m in self.modules():
+            if isinstance(m, Linear):
+                nn.init.xavier_normal_(m.weight)

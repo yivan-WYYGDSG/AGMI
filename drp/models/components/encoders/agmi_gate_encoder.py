@@ -23,7 +23,7 @@ class MultiEdgeGatedGraphConv(GatedGraphConv):
         self.register_buffer('cell_edge_index', None)
         self.register_buffer('cell_edge_index_test', None)
 
-        self.muti_edges_rnn = torch.nn.GRUCell(out_channels * num_edges, out_channels, bias=bias)
+        self.multi_edges_rnn = torch.nn.GRUCell(out_channels * num_edges, out_channels, bias=bias)
         
         if include_edges is None:
             include_edges = ['ppi', 'gsea', 'pcc']
@@ -58,11 +58,11 @@ class MultiEdgeGatedGraphConv(GatedGraphConv):
 
         for i in range(self.num_layers):
             x_cur = torch.matmul(x, self.weight[i])
-            if self.muti_edges_rnn is not None:
+            if self.multi_edges_rnn is not None:
                 m = self.propagate(edges, x=x_cur, edge_weight=weights[0])
                 for w in weights[1:]:
                     m = torch.cat((m, self.propagate(edges, x=x_cur, edge_weight=w)), dim=1)
-                x = self.muti_edges_rnn(m, x)
+                x = self.multi_edges_rnn(m, x)
             else:
                 # this method require num_layers equals len(weights)
                 m = self.propagate(edges, x=x_cur, edge_weight=weights[i], size=None)

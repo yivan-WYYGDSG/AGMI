@@ -1,4 +1,4 @@
-from ..base import BaseModel
+from torch import nn
 from ..registry import MODELS
 from drp.core import mse, rmse, r2, pearson, spearman, mae
 from ..builder import build_backbone, build_loss, build_component
@@ -6,7 +6,7 @@ from mmcv.runner import auto_fp16
 
 
 @MODELS.register_module()
-class BasicDRPNet(BaseModel):
+class BasicDRPNet(nn.Module):
     """Basic model for drug response prediction
 
     It must contain a drper that takes an drug garph and genes information as inputs and outputs a

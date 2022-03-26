@@ -85,6 +85,8 @@ def main():
 
     data_loader = build_dataloader(dataset, **loader_cfg)
     model = build_model(cfg.model, train_cfg=None, test_cfg=cfg.test_cfg)
+    for k,v in model.state_dict().items():
+        print(f'{k} : {v.shape}')
     model.load_state_dict(torch.load(args.checkpoint))
     
     if cfg.edges is not None:
