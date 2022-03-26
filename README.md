@@ -23,7 +23,7 @@ We trained AGMI on our [benchmark dataset](https://drive.google.com/drive/folder
 
 ## Disclaimer
 
-This repo is tested under Python 3.7, PyTorch 1.9.0, Cuda 11.0, and mmcv-full==1.3.10.
+This repo is tested under Python 3.8, PyTorch 1.11.0, Cuda 11.3, and mmcv-full==1.3.10.
 
 ## Installation
 
